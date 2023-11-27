@@ -1,16 +1,16 @@
 import requests
 import pandas as pd
-import pymongo
+#import pymongo
 
 # Tu clave de la API
 api_key = 'c8143bf74c1d797a6756f96808315a09'
 
 
 #Conexión a la base de datos
-client = pymongo.MongoClient("mongodb://mongo_lake:27017")
+'''client = pymongo.MongoClient("mongodb://mongo_lake:27017")
 db = client["pelicuas"]
 casa = db["drinks"]
-mongo = db["IMDB_m"]
+mongo = db["IMDB_m"]'''
 
 # Lista para almacenar los datos de cada películasp
 movie_data_list = [] #Esto es para comprobar que se han guardado los datos
@@ -18,10 +18,10 @@ movie_data_list = [] #Esto es para comprobar que se han guardado los datos
 # Lista de claves IMDb (deberás reemplazar esto con la lista obtenida de tu archivo CSV)
 keys = list(pd.read_csv("imdb_keys.csv")["keys"])
 
-client = pymongo.MongoClient("mongodb://mongo_lake:27017")
+'''client = pymongo.MongoClient("mongodb://mongo_lake:27017")
 db = client["cocktails"]
 casa = db["drinks"]
-mongo = db["IMDB_m"] 
+mongo = db["IMDB_m"] '''
 
 # Bucle para recorrer cada clave y realizar la solicitud a la API
 for i in range(10): #El range ahorita está en 1 para comprobar que se esten guardando los datos

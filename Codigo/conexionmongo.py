@@ -34,7 +34,7 @@ for i in range(10):
     if response.status_code == 200:
         # Añadir los datos de la película a la lista
         datos_movie= response.json()
-        print(f"Guardado movie #{i}: {datos_movie['movie_results']}")
+        #print(f"Guardado movie #{i}: {datos_movie['movie_results']}")
     else:
         print(f"Failed to retrieve data for {key}. Status code:", response.status_code)
             

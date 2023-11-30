@@ -33,7 +33,7 @@ for i in range(200):
     if response.status_code == 200:
         # Añadir los datos de la película a la lista
         datos_movie= response.json()
-        db.IMDB_m.insert_one(datos_movie)
+        mongo.insert_one(datos_movie)
         print(f"Guardado movie #{i}: {datos_movie['movie_results']}")
     else:
         print(f"Failed to retrieve data for {key}. Status code:", response.status_code)

@@ -19,14 +19,54 @@ docker-compose up
 
 Queries en mongo 
  ```bash
+db.claves3.aggregate([
+  {
+    $unwind: "$movie_results"
+  },
+  {
+    $group: {
+      _id: "$movie_results.title",
+      total_votes: { $sum: "$movie_results.vote_count" },
+      average_rating: { $avg: "$movie_results.vote_average" }
+    }
+  },
+  {
+    $sort: {
+      total_votes: -1
+    }
+  },
+  {
+    $limit: 10
+  },
+  {
+    $sort: {
+      "_id": 1
+    }
+  }
+])
+
 
   ```
 
  ```bash
-
+db.claves3 .find({ "movie_results.release_date": { $lt: "2022-01-01" } })
   ```
  
  ```bash
+db.claves3.aggregate([
+    {
+        $unwind: "$movie_results"
+    },
+    {
+        $group: {
+            _id: "$movie_results.title",
+            average_rating: { $avg: "$movie_results.vote_average" }
+        }
+    },
+    {
+        $sort: { average_rating: -1 }
+    }
+])
 
   ```
 

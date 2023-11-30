@@ -22,7 +22,7 @@ services:
       - "7474:7474"
       - "7687:7687"
 
-  python-scripts:
+  Data_loder:
     build:
       context: .
       dockerfile: Dockerfile

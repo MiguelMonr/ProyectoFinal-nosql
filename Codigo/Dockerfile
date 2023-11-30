@@ -11,5 +11,5 @@ COPY . .
 
 # Command to run your Python scripts
 CMD sleep 45 && python conexionmongo.py && \
-    python ETLCas.py && \
+    python coexion_cassandra.py && \
     python neo4j_conexion.py

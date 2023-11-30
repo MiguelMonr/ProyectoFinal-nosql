@@ -1,4 +1,4 @@
-from Codigo.neo4j import GraphDatabase
+from neo4j import GraphDatabase
 
 # Conexión a la base de datos Neo4j
 uri = "bolt://localhost:7687"  # Reemplaza con tu URL

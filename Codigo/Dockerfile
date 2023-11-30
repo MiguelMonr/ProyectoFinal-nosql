@@ -10,8 +10,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
 
 # Command to run your Python scripts
-CMD sleep 45 && python cocktails_data.py && \
-    python importIngredientsNeo4J.py && \
-    python importDrinksNeo4J.py && \
-    python importRealationsNeo4J.py && \
-    python importCassandra.py
+CMD ["sh", "-c", "sleep 75 && python3 app.py"]

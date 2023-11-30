@@ -1,4 +1,4 @@
-FROM python:3.11.4
+FROM python:3.11
 
 WORKDIR /app
 
@@ -10,4 +10,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
 
 # Command to run your Python scripts
-CMD ["sh", "-c", "sleep 45 && python3 main.py"]
+CMD ["sh", "-c", "sleep 15 && python3 conexionmongo.py"]

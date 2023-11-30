@@ -22,7 +22,7 @@ db = client["movies"]
 mongo = db["IMDB_m"]
 
 # Bucle para recorrer cada clave y realizar la solicitud a la API
-for i in range(10):
+for i in range(200):
     key = keys[i]
     url = f"https://api.themoviedb.org/3/find/{key}?api_key={api_key}&external_source=imdb_id"
 
